@@ -1,0 +1,7 @@
+﻿namespace DataAccessLayer
+{
+    interface IOrderDatacs
+    {
+
+    }
+}

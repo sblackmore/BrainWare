@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-
-namespace Web.Controllers
+﻿namespace Web.Controllers
 {
-    using System.Web.Mvc;
     using Infrastructure;
     using Models;
+    using System.Collections.Generic;
+    using System.Web.Http;
 
     public class OrderController : ApiController
     {

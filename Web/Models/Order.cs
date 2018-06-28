@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Web.Models
+﻿namespace Web.Models
 {
-    using System.Security.AccessControl;
+    using System.Collections.Generic;
 
     public class Order
     {
@@ -18,7 +13,6 @@ namespace Web.Models
         public decimal OrderTotal { get; set; }
 
         public List<OrderProduct> OrderProducts { get; set; }
-
     }
 
 

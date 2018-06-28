@@ -14,7 +14,9 @@ namespace Web.Infrastructure
 
         public Database()
         {
-            _connection = new SqlConnection("Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=BrainWAre;Integrated Security=SSPI;AttachDBFilename=D:\\BrainWare\\Web\\App_Data\\BrainWare.mdf");
+            // _connection = new SqlConnection("Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=BrainWAre;Integrated Security=SSPI;AttachDBFilename=D:\\BrainWare\\Web\\App_Data\\BrainWare.mdf");
+            //Server = localhost; Database = master; Trusted_Connection = True;
+            _connection = new SqlConnection("Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=BrainWAre;Integrated Security=SSPI;AttachDBFilename=D:\\Users\\sblackmore\\BrainWare\\Web\\App_Data\\BrainWare.mdf");
 
             _connection.Open();
         }
@@ -22,8 +24,6 @@ namespace Web.Infrastructure
 
         public DbDataReader ExecuteReader(string query)
         {
-           
-
             var sqlQuery = new SqlCommand(query, _connection);
 
             return sqlQuery.ExecuteReader();
