@@ -6,7 +6,27 @@
 
     public class OrderData
     {
-        private readonly SqlConnection connection = new
-          SqlConnection(ConfigurationManager.ConnectionStrings["MyDBConnectionString"].ConnectionString);
+        //private readonly SqlConnection _connection = new
+        //  SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ToString());
+
+        public DbDataReader ExecuteReader(string query)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+            var connection = new SqlConnection(connectionString);
+            connection.Open();
+            var sqlQuery = new SqlCommand(query, connection);
+
+            return sqlQuery.ExecuteReader();
+        }
+
+        public int ExecuteNonQuery(string query)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+            var connection = new SqlConnection(connectionString);
+            connection.Open();
+            var sqlQuery = new SqlCommand(query, connection);
+
+            return sqlQuery.ExecuteNonQuery();
+        }
     }
 }

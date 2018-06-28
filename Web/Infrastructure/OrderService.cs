@@ -6,6 +6,7 @@ using System.Web;
 namespace Web.Infrastructure
 {
     using System.Data;
+    using DataAccessLayer;
     using Models;
 
     public class OrderService
@@ -13,7 +14,7 @@ namespace Web.Infrastructure
         public List<Order> GetOrdersForCompany(int CompanyId)
         {
 
-            var database = new Database();
+            var database = new OrderData();
 
             // Get the orders
             var sql1 =
