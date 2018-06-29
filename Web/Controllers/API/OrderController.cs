@@ -1,7 +1,7 @@
 ﻿namespace Web.Controllers
 {
     using Infrastructure;
-    using Models;
+    using BusinessModel;
     using System.Collections.Generic;
     using System.Web.Http;
 

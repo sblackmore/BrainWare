@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[GetOrderProducts]
+﻿
+CREATE PROCEDURE [dbo].[GetOrderProducts]
 AS
 BEGIN
 	SELECT op.price, op.order_id, op.product_id, op.quantity, p.name, p.price 

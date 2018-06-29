@@ -7,7 +7,7 @@ namespace Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
-    {
+    {/*
         [TestMethod]
         public void Index()
         {
@@ -21,5 +21,6 @@ namespace Tests.Controllers
             Assert.IsNotNull(result);
             Assert.AreEqual("Home Page", result.ViewBag.Title);
         }
+        */
     }
 }
