@@ -151,13 +151,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{1139d19e-15a4-4431-9e04-80c83f118233}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusinessModel\BusinessModel.csproj">
       <Project>{B91B65AA-B2F7-4884-8E0E-A5609950850C}</Project>
       <Name>BusinessModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{2b1e70cb-a881-471a-815f-9860de9bc424}</Project>
-      <Name>DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -170,7 +170,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

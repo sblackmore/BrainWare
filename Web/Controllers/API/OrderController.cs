@@ -1,9 +1,9 @@
 ﻿namespace Web.Controllers
 {
-    using Infrastructure;
     using BusinessModel;
     using System.Collections.Generic;
     using System.Web.Http;
+    using BusinessLogic;
 
     public class OrderController : ApiController
     {
