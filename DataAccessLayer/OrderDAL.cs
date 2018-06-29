@@ -40,7 +40,7 @@
             return values;
         }
 
-        public List<OrderProduct> GetOrderProducts(string query)
+        public List<OrderProduct> GetOrderProducts()
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
             var values = new List<OrderProduct>();
@@ -48,9 +48,12 @@
             {
                 connection.Open();
 
-                var sqlQuery = new SqlCommand(query, connection);
+                var command = new SqlCommand("dbo.GetOrderProducts", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
 
-                using (SqlDataReader reader = sqlQuery.ExecuteReader())
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
@@ -72,16 +75,6 @@
                 }
             }
             return values;
-        }
-
-        public int ExecuteNonQuery(string query)
-        {
-            var connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-            var connection = new SqlConnection(connectionString);
-            connection.Open();
-            var sqlQuery = new SqlCommand(query, connection);
-
-            return sqlQuery.ExecuteNonQuery();
         }
     }
 }
